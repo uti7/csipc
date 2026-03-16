@@ -25,9 +25,9 @@ namespace csipc
         [StructLayout(LayoutKind.Sequential)]
         struct COPYDATASTRUCT
         {
-            public IntPtr dwData; // int から IntPtr へ変更
+            public IntPtr dwData; // int > IntPtr (x64)
             public int cbData;
-            public IntPtr lpData; // int から IntPtr へ変更
+            public IntPtr lpData; // int > IntPtr (x64)
         }
 
         #endregion
@@ -44,7 +44,8 @@ namespace csipc
         ///<param name="host">Form object that will monitor and accept communication with other process</param>
         public IPC()
         {
-            IntPtr handle = (IntPtr)FindWindow(null, "Windows PowerShell ISE");
+            // make it the appropriate
+            IntPtr handle = (IntPtr)FindWindow(null, "Windows PowerShell ISE"); 
             this.AssignHandle(handle);
         }
         public IPC(Form host) { this.AssignHandle(host.Handle); }
