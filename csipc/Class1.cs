@@ -80,7 +80,7 @@ namespace csipc
             // A Unicode string consists of 2 bytes per character plus a 2-byte null terminator.
             cd.cbData = (msg.Length + 1) * 2; 
             
-            // ToInt32() を削除し、IntPtr のまま保持する
+            // stop calling ToInt32() and keep it as an IntPtr. (x64)
             IntPtr pText = Marshal.StringToHGlobalUni(msg);
             try
             {
