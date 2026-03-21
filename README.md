@@ -18,3 +18,5 @@ Inter-process communication using window messages (x64) [^1]
         * example of using C#:
           * ./WindowsFormsApplication1/Form1.cs
 
+## note
+The methods for implementing inter-process communication in the .NET environment are well-established. There's no real reason to use this DLL in this day and age.
